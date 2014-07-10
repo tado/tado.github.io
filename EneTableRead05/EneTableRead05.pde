@@ -47,13 +47,13 @@ void draw() {
   if (hour > 23) {
     hour = 0;
     dataNum++;
+    // もしファイル数よりも多ければリセット
+    if (dataNum > filelist.length - 1) {
+      dataNum = 0;
+    }
+    // クラスを再度初期化する
+    ene = new EneTable(filelist[dataNum]);
   }
-  // もしファイル数よりも多ければリセット
-  if (dataNum > filelist.length - 1) {
-    dataNum = 0;
-  }
-  // クラスを再度初期化する
-  ene = new EneTable(filelist[dataNum]);
 }
 
 // EneTable
